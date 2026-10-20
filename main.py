@@ -1,5 +1,5 @@
 
-# constant declaration
+
 SHOWS_FILE = "shows.txt"
 BOOKINGS_FILE = "bookings.txt"
 LOG_FILE = "sample_run.txt"
@@ -9,7 +9,7 @@ PRICES = {"A": 150, "B": 150, "C": 200, "D": 200, "E": 250}
 REFUND_PERCENT = 80
 
 
-# output/input 
+
 def show(text=""):
     print(text)
     file = open(LOG_FILE, "a")
@@ -25,9 +25,9 @@ def ask(prompt):
     return answer
 
 
-# input handlers
+
 def get_text(prompt):
-    # keep asking until the user types something without | or ,
+
     while True:
         text = ask(prompt).strip()
         if text == "":
@@ -39,7 +39,7 @@ def get_text(prompt):
 
 
 def get_int(prompt, low, high):
-    # keep asking until the user types a whole number between low and high
+    
     while True:
         text = ask(prompt).strip()
         try:
@@ -53,9 +53,9 @@ def get_int(prompt, low, high):
             return number
 
 
-# file functions
+
 def load_shows():
-    # read shows.txt into a list of dictionaries
+    
     shows = []
     try:
         file = open(SHOWS_FILE, "r")
@@ -66,12 +66,12 @@ def load_shows():
                               "date": parts[2], "time": parts[3]})
         file.close()
     except FileNotFoundError:
-        pass  # no file exists
+        pass  
     return shows
 
 
 def load_bookings():
-    # read bookings.txt into a list of dictionaries
+   
     bookings = []
     try:
         file = open(BOOKINGS_FILE, "r")
@@ -84,7 +84,7 @@ def load_bookings():
                                      "seats": parts[3].split(","),
                                      "amount": int(parts[4])})
                 except ValueError:
-                    pass  # skip the damaged line
+                    pass  
         file.close()
     except FileNotFoundError:
         pass
@@ -92,7 +92,7 @@ def load_bookings():
 
 
 def save_bookings(bookings):
-    # write every booking back to bookings.txt
+   
     file = open(BOOKINGS_FILE, "w")
     file.write("BookingID|ShowID|CustomerName|Seats|Amount\n")
     for b in bookings:
@@ -101,7 +101,7 @@ def save_bookings(bookings):
 
 
 def find_show(shows, code):
-    # return the show with this ID, or None if not found
+   
     for s in shows:
         if s["id"] == code:
             return s
@@ -109,7 +109,7 @@ def find_show(shows, code):
 
 
 def get_taken(bookings, show_id):
-    # list of seats already booked for this show
+   
     taken = []
     for b in bookings:
         if b["show"] == show_id:
@@ -119,14 +119,14 @@ def get_taken(bookings, show_id):
 
 
 def seat_exists(seat):
-    # valid seats are A1 to E8
+   
     if len(seat) < 2 or seat[0] not in ROWS or not seat[1:].isdigit():
         return False
     return int(seat[1:]) >= 1 and int(seat[1:]) <= SEATS_PER_ROW
 
 
 def count_gaps(taken):
-    # count free seats that have a booked seat on both sides
+
     count = 0
     for row in ROWS:
         for col in range(2, SEATS_PER_ROW):
@@ -139,7 +139,7 @@ def count_gaps(taken):
 
 
 def next_booking_id(bookings):
-    # one more than the highest booking number, like BK0010
+   
     highest = 0
     for b in bookings:
         number = int(b["id"][2:])
@@ -155,7 +155,7 @@ def show_list(shows):
 
 
 def pick_show(shows):
-    # show all shows and ask for one, returns None if not found
+    
     show_list(shows)
     code = ask("Enter show ID: ").strip().upper()
     s = find_show(shows, code)
@@ -179,7 +179,7 @@ def print_map(s, bookings):
         show(f"{line}  Rs. {PRICES[row]}")
 
 
-# menu features
+
 def list_shows(shows, bookings):
     show_list(shows)
 
@@ -270,7 +270,7 @@ def report(shows, bookings):
 
 
 def best_seats(shows, bookings):
-    # bonus: block of N adjacent free seats closest to the centre
+    
     s = pick_show(shows)
     if s is None:
         return
@@ -289,7 +289,7 @@ def best_seats(shows, bookings):
                     free = False
             if not free or count_gaps(taken + block) > count_gaps(taken):
                 continue
-            # distance of the block from the middle column and middle row
+            
             score = abs(start + (n - 1) / 2 - 4.5) + abs(r - 2)
             if best is None or score < best_score:
                 best = block
@@ -300,7 +300,7 @@ def best_seats(shows, bookings):
         show(f"Best seats: {','.join(best)}")
 
 
-# ---------- Menu ----------
+
 def show_menu():
     show("\n===== MOVIE TICKET MENU =====")
     show("1. List shows           2. Seat map")
