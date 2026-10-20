@@ -1,0 +1,137 @@
+
+===== MOVIE TICKET MENU =====
+1. List shows           2. Seat map
+3. Book seats           4. Cancel booking
+5. Occupancy & revenue  6. Best seats
+0. Exit
+Enter choice: abc
+Please enter a whole number.
+Enter choice: 1
+ID   Movie              Date        Time
+S1   The Last Orbit     18-10-2026  18:30
+S2   The Last Orbit     19-10-2026  21:00
+S3   Monsoon Letters    20-10-2026  15:00
+S4   Monsoon Letters    21-10-2026  18:30
+
+===== MOVIE TICKET MENU =====
+1. List shows           2. Seat map
+3. Book seats           4. Cancel booking
+5. Occupancy & revenue  6. Best seats
+0. Exit
+Enter choice: 2
+ID   Movie              Date        Time
+S1   The Last Orbit     18-10-2026  18:30
+S2   The Last Orbit     19-10-2026  21:00
+S3   Monsoon Letters    20-10-2026  15:00
+S4   Monsoon Letters    21-10-2026  18:30
+Enter show ID: S1
+
+The Last Orbit | 18-10-2026 18:30
+
+----- SCREEN -----
+   1  2  3  4  5  6  7  8
+A [ ][ ][ ][ ][ ][ ][ ][ ]  Rs. 150
+B [ ][ ][X][X][ ][ ][ ][ ]  Rs. 150
+C [ ][ ][ ][X][X][X][ ][ ]  Rs. 200
+D [ ][ ][ ][ ][ ][ ][ ][ ]  Rs. 200
+E [ ][ ][ ][ ][ ][ ][ ][ ]  Rs. 250
+
+===== MOVIE TICKET MENU =====
+1. List shows           2. Seat map
+3. Book seats           4. Cancel booking
+5. Occupancy & revenue  6. Best seats
+0. Exit
+Enter choice: 3
+ID   Movie              Date        Time
+S1   The Last Orbit     18-10-2026  18:30
+S2   The Last Orbit     19-10-2026  21:00
+S3   Monsoon Letters    20-10-2026  15:00
+S4   Monsoon Letters    21-10-2026  18:30
+Enter show ID: S1
+
+The Last Orbit | 18-10-2026 18:30
+
+----- SCREEN -----
+   1  2  3  4  5  6  7  8
+A [ ][ ][ ][ ][ ][ ][ ][ ]  Rs. 150
+B [ ][ ][X][X][ ][ ][ ][ ]  Rs. 150
+C [ ][ ][ ][X][X][X][ ][ ]  Rs. 200
+D [ ][ ][ ][ ][ ][ ][ ][ ]  Rs. 200
+E [ ][ ][ ][ ][ ][ ][ ][ ]  Rs. 250
+
+Seats to book, e.g. B3,B4 (Enter = go back): C4,C5
+Seat C4 is already booked. Choose other seats.
+Seat C5 is already booked. Choose other seats.
+
+Seats to book, e.g. B3,B4 (Enter = go back): A9
+Seat A9 does not exist. Choose other seats.
+
+Seats to book, e.g. B3,B4 (Enter = go back): B6
+This leaves a single empty seat between booked seats. Choose other seats.
+
+Seats to book, e.g. B3,B4 (Enter = go back): D4,D5
+Customer name: Kiran
+
+------ BOOKING CONFIRMED ------
+Booking ID: BK0010
+Name: Kiran
+Show: The Last Orbit 18-10-2026 18:30
+Seat D4: Rs. 200
+Seat D5: Rs. 200
+Total: Rs. 400
+-------------------------------
+
+===== MOVIE TICKET MENU =====
+1. List shows           2. Seat map
+3. Book seats           4. Cancel booking
+5. Occupancy & revenue  6. Best seats
+0. Exit
+Enter choice: 5
+S1 The Last Orbit 18-10-2026 18:30: 7/40 seats, occupancy 17.5%, revenue Rs. 1300
+S2 The Last Orbit 19-10-2026 21:00: 2/40 seats, occupancy 5.0%, revenue Rs. 500
+S3 Monsoon Letters 20-10-2026 15:00: 0/40 seats, occupancy 0.0%, revenue Rs. 0
+S4 Monsoon Letters 21-10-2026 18:30: 0/40 seats, occupancy 0.0%, revenue Rs. 0
+TOTAL REVENUE: Rs. 1800
+
+===== MOVIE TICKET MENU =====
+1. List shows           2. Seat map
+3. Book seats           4. Cancel booking
+5. Occupancy & revenue  6. Best seats
+0. Exit
+Enter choice: 6
+ID   Movie              Date        Time
+S1   The Last Orbit     18-10-2026  18:30
+S2   The Last Orbit     19-10-2026  21:00
+S3   Monsoon Letters    20-10-2026  15:00
+S4   Monsoon Letters    21-10-2026  18:30
+Enter show ID: S1
+How many adjacent seats: 3
+Best seats: A3,A4,A5
+
+===== MOVIE TICKET MENU =====
+1. List shows           2. Seat map
+3. Book seats           4. Cancel booking
+5. Occupancy & revenue  6. Best seats
+0. Exit
+Enter choice: 4
+Booking ID to cancel: BK0010
+Cancel BK0010 (D4,D5, Rs. 400)? (y/n): y
+Booking cancelled. Seats D4,D5 are free again.
+Refund (80%): Rs. 320.00
+
+===== MOVIE TICKET MENU =====
+1. List shows           2. Seat map
+3. Book seats           4. Cancel booking
+5. Occupancy & revenue  6. Best seats
+0. Exit
+Enter choice: 4
+Booking ID to cancel: BK9999
+Booking not found.
+
+===== MOVIE TICKET MENU =====
+1. List shows           2. Seat map
+3. Book seats           4. Cancel booking
+5. Occupancy & revenue  6. Best seats
+0. Exit
+Enter choice: 0
+Goodbye!

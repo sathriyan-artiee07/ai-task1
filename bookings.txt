@@ -1,0 +1,4 @@
+BookingID|ShowID|CustomerName|Seats|Amount
+BK0007|S1|Ravi|B3,B4|300
+BK0008|S1|Anita|C4,C5,C6|600
+BK0009|S2|Meena|E1,E2|500
